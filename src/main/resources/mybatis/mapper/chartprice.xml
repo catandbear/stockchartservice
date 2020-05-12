@@ -3,22 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.fsd2020.data.mapper.StockPriceMapper">
+<mapper namespace="com.fsd2020.data.mapper.ChartPriceMapper">
+
+	<select id="getPrice1" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
+		select price,price_min as time  from stock_price_detail 
+			where price_min between #{startTime1} and #{endTime1} 
+				and company_code=#{code} 
+	</select>
+	<select id="getPrice2" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
+		select price,price_min as time  from stock_price_detail 
+			where price_min between #{startTime1} and #{endTime1} 
+				and company_code=#{code} 
+	</select>
 	
-	<insert id="addPrice" >
-		insert into 
-			stock_price_detail (
-					company_code, 
-					stock_exchange, 
-					current_price,
-					price_min) 
-			VALUES 
-			<foreach collection="prices" item="price" separator=",">
-				(
-					#{price.company_code}, 
-					#{price.stock_exchange}, 
-					#{price.current_price},
-					#{price.price_min} )
-			</foreach>
-	</insert>
+	<select id="getCompanyCode" resultType="String">
+		select company_code from company where company_name=#{companyName}
+	</select>
 </mapper>

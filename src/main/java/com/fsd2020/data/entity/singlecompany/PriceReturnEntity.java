@@ -1,4 +1,4 @@
-package com.fsd2020.data.entity;
+package com.fsd2020.data.entity.singlecompany;
 
 import java.sql.Timestamp;
 
@@ -11,10 +11,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class StockPriceEntity {
+public class PriceReturnEntity {
 
-	private String company_code;
-	private String stock_exchange;
 	private String price;
-	private Timestamp price_min;
+	private Timestamp time;
 }

@@ -11,11 +11,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class SingleCompareEntity {
+public class CompareInputEntity {
 
 	private String name;
-	private Timestamp startTime1;
-	private Timestamp endTime1;
+	private String code;
+	private String startTime1;
+	private String endTime1;
 	private Timestamp startTime2;
 	private Timestamp endTime2;
 }
