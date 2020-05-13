@@ -1,5 +1,9 @@
 package com.fsd2020.data.entity.muticompany;
 
+import java.util.List;
+
+import com.fsd2020.data.entity.singlecompany.PriceReturnEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,12 +13,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class MutiCompanyInputEntity {
+public class MutiCompanyOutputEntity {
 
 	private String name1;
-	private String code1;
 	private String name2;
-	private String code2;
-	private String startTime;
-	private String endTime;
+	List<PriceReturnEntity> price1;
+	List<PriceReturnEntity> price2;
 }
