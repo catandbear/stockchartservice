@@ -5,6 +5,8 @@
 
 <mapper namespace="com.fsd2020.data.mapper.ChartPriceMapper">
 
+
+	<!-- Single Company compare -->
 	<select id="getPrice1" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
 		select price,price_min as time  from stock_price_detail 
 			where price_min between #{startTime1} and #{endTime1} 
@@ -15,7 +17,6 @@
 			where price_min between #{startTime1} and #{endTime1} 
 				and company_code=#{code} 
 	</select>
-	
 	<select id="getCompanyCode" resultType="String">
 		select company_code from company where company_name=#{companyName}
 	</select>

@@ -12,8 +12,10 @@ import com.fsd2020.data.entity.singlecompany.PriceReturnEntity;
 @Repository
 public interface ChartPriceMapper {
 
+	// Single Company Compare
 	List<PriceReturnEntity> getPrice1(CompareInputEntity single);
 	List<PriceReturnEntity> getPrice2(CompareInputEntity single);
-
 	String getCompanyCode(String companyName);
+	
+	
 }

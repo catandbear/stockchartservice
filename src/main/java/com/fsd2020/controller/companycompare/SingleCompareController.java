@@ -1,4 +1,4 @@
-package com.fsd2020.controller;
+package com.fsd2020.controller.companycompare;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
