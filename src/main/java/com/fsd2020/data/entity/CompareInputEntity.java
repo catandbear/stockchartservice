@@ -17,6 +17,6 @@ public class CompareInputEntity {
 	private String code;
 	private String startTime1;
 	private String endTime1;
-	private Timestamp startTime2;
-	private Timestamp endTime2;
+	private String startTime2;
+	private String endTime2;
 }

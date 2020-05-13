@@ -14,7 +14,7 @@
 	</select>
 	<select id="getPrice2" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
 		select price,price_min as time  from stock_price_detail 
-			where price_min between #{startTime1} and #{endTime1} 
+			where price_min between #{startTime2} and #{endTime2} 
 				and company_code=#{code} 
 	</select>
 	<select id="getCompanyCode" resultType="String">

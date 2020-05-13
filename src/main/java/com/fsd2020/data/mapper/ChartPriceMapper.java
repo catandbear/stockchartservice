@@ -17,5 +17,6 @@ public interface ChartPriceMapper {
 	List<PriceReturnEntity> getPrice2(CompareInputEntity single);
 	String getCompanyCode(String companyName);
 	
+	// Muti company compare
 	
 }

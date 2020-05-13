@@ -30,11 +30,11 @@ public class SingleCompareController {
 		return new CampareOutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare), mapper.getPrice2(singleCompare));
 	}
 	
-	@PostMapping("sector/single")
-	public CampareOutputEntity getSingleSectorPrices(@RequestBody(required = true) CompareInputEntity singleCompare) {
-		
-		singleCompare.setCode(mapper.getCompanyCode(singleCompare.getName()));
-		return new CampareOutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare), mapper.getPrice2(singleCompare));
-	}
+//	@PostMapping("sector/single")
+//	public CampareOutputEntity getSingleSectorPrices(@RequestBody(required = true) CompareInputEntity singleCompare) {
+//		
+//		singleCompare.setCode(mapper.getCompanyCode(singleCompare.getName()));
+//		return new CampareOutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare), mapper.getPrice2(singleCompare));
+//	}
 
 }
