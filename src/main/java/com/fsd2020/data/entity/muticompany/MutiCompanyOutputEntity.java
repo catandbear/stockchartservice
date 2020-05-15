@@ -7,12 +7,10 @@ import com.fsd2020.data.entity.singlecompany.PriceReturnEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class MutiCompanyOutputEntity {
 
 	private String name1;

@@ -1,16 +1,8 @@
 package com.fsd2020.data.entity;
 
-import java.sql.Timestamp;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 public class CompareInputEntity {
 
 	private String name;
