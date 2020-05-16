@@ -24,7 +24,7 @@ public class SectorController {
 	
 	@PostMapping("sector/single")
 	public CampareOutputEntity getSingleCompanyPrices(@RequestBody(required = true) CompareInputEntity singleCompare) {
-
+		// this is test vscode function
 		singleCompare.setCode(mapper.getCompanyCode(singleCompare.getName()));
 		return new CampareOutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare),
 				mapper.getPrice2(singleCompare));
