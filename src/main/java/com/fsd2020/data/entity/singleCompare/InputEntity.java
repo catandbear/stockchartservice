@@ -1,9 +1,9 @@
-package com.fsd2020.data.entity;
+package com.fsd2020.data.entity.singleCompare;
 
 import lombok.Data;
 
 @Data
-public class CompareInputEntity {
+public class InputEntity {
 
 	private String name;
 	private String code;

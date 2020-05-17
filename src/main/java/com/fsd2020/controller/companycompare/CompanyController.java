@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fsd2020.data.entity.CompareInputEntity;
-import com.fsd2020.data.entity.muticompany.MutiCompanyInputEntity;
-import com.fsd2020.data.entity.muticompany.MutiCompanyOutputEntity;
-import com.fsd2020.data.entity.singleCompare.CompareOutputEntity;
+import com.fsd2020.data.entity.singleCompare.InputEntity;
+import com.fsd2020.data.entity.MutiInputEntity;
+import com.fsd2020.data.entity.MutiOutputEntity;
+import com.fsd2020.data.entity.singleCompare.OutputEntity;
 import com.fsd2020.data.entity.singleCompare.PriceReturnEntity;
 import com.fsd2020.data.mapper.ChartPriceMapper;
 
@@ -30,17 +30,17 @@ public class CompanyController {
 	}
 
 	@PostMapping("single")
-	public CompareOutputEntity getSingleCompanyPrices(@RequestBody(required = true) CompareInputEntity singleCompare) {
+	public OutputEntity getSingleCompanyPrices(@RequestBody(required = true) InputEntity singleCompare) {
 
 		singleCompare.setCode(mapper.getCompanyCode(singleCompare.getName()));
-		return new CompareOutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare),
+		return new OutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare),
 				mapper.getPrice2(singleCompare));
 	}
 
 	// {"name1":"company1", "name2":"company2", "startTime": "2020-05-3 12:33",
 	// "endTime": "2020-05-3 12:33"}
-	@GetMapping("muticompare")
-	private MutiCompanyOutputEntity compareMutiCompany(MutiCompanyInputEntity companies) {
+	@GetMapping("multi")
+	private MutiOutputEntity compareMutiCompany(@RequestBody(required = true) MutiInputEntity companies) {
 
 		System.out.println(companies.toString());
 
@@ -50,7 +50,7 @@ public class CompanyController {
 		List<PriceReturnEntity> mutiPrice1 = mapper.getMutiCompanyPrice1(companies);
 		List<PriceReturnEntity> mutiPrice2 = mapper.getMutiCompanyPrice1(companies);
 
-		return new MutiCompanyOutputEntity(companies.getName1(), companies.getName2(), mutiPrice1, mutiPrice2);
+		return new MutiOutputEntity(companies.getName1(), companies.getName2(), mutiPrice1, mutiPrice2);
 	}
 
 }

@@ -11,7 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CompareOutputEntity {
+public class OutputEntity {
 
 	private String name;
 	private List<PriceReturnEntity> price1;

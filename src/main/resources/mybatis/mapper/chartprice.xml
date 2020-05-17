@@ -11,6 +11,11 @@
 	</select>
 
 	<!-- Single Company compare -->
+	<select id="getSingleCompanyPrice" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity">
+		select price,price_min as time  from stock_price_detail
+			where price_min between #{start} and #{end}
+				and company_code=#{code}
+	</select>
 	<select id="getPrice1" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity" >
 		select price,price_min as time  from stock_price_detail 
 			where price_min between #{startTime1} and #{endTime1} 

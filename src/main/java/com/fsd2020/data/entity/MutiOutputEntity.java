@@ -1,4 +1,4 @@
-package com.fsd2020.data.entity.muticompany;
+package com.fsd2020.data.entity;
 
 import java.util.List;
 
@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
-public class MutiCompanyOutputEntity {
+public class MutiOutputEntity {
 
 	private String name1;
 	private String name2;

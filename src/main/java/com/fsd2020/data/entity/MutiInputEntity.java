@@ -1,4 +1,4 @@
-package com.fsd2020.data.entity.muticompany;
+package com.fsd2020.data.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MutiCompanyInputEntity {
+public class MutiInputEntity {
 
 	private String name1;
 	private String code1;
