@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fsd2020.data.entity.CompareInputEntity;
 import com.fsd2020.data.entity.muticompany.MutiCompanyInputEntity;
 import com.fsd2020.data.entity.muticompany.MutiCompanyOutputEntity;
-import com.fsd2020.data.entity.singlecompany.CampareOutputEntity;
-import com.fsd2020.data.entity.singlecompany.PriceReturnEntity;
+import com.fsd2020.data.entity.singleCompare.CompareOutputEntity;
+import com.fsd2020.data.entity.singleCompare.PriceReturnEntity;
 import com.fsd2020.data.mapper.ChartPriceMapper;
 
 @RestController
-@RequestMapping("compare")
+@RequestMapping("compare/company")
 @CrossOrigin("*")
 public class CompanyController {
 
@@ -29,17 +29,17 @@ public class CompanyController {
 		this.mapper = mapper;
 	}
 
-	@PostMapping("company/single")
-	public CampareOutputEntity getSingleCompanyPrices(@RequestBody(required = true) CompareInputEntity singleCompare) {
+	@PostMapping("single")
+	public CompareOutputEntity getSingleCompanyPrices(@RequestBody(required = true) CompareInputEntity singleCompare) {
 
 		singleCompare.setCode(mapper.getCompanyCode(singleCompare.getName()));
-		return new CampareOutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare),
+		return new CompareOutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare),
 				mapper.getPrice2(singleCompare));
 	}
 
 	// {"name1":"company1", "name2":"company2", "startTime": "2020-05-3 12:33",
 	// "endTime": "2020-05-3 12:33"}
-	@GetMapping("company/muticompare")
+	@GetMapping("muticompare")
 	private MutiCompanyOutputEntity compareMutiCompany(MutiCompanyInputEntity companies) {
 
 		System.out.println(companies.toString());

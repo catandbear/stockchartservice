@@ -11,26 +11,40 @@
 	</select>
 
 	<!-- Single Company compare -->
-	<select id="getPrice1" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
+	<select id="getPrice1" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity" >
 		select price,price_min as time  from stock_price_detail 
 			where price_min between #{startTime1} and #{endTime1} 
 				and company_code=#{code} 
 	</select>
-	<select id="getPrice2" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
+	<select id="getPrice2" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity" >
 		select price,price_min as time  from stock_price_detail 
 			where price_min between #{startTime2} and #{endTime2} 
 				and company_code=#{code} 
 	</select>
 	
 	<!-- Muti Company Compare -->
-	<select id="getMutiCompanyPrice1" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
+	<select id="getMutiCompanyPrice1" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity" >
 		select price,price_min as time  from stock_price_detail 
 			where price_min between #{startTime} and #{endTime} 
 				and company_code=#{code1} 
 	</select>
-	<select id="getMutiCompanyPrice2" resultType="com.fsd2020.data.entity.singlecompany.PriceReturnEntity" >
+	<select id="getMutiCompanyPrice2" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity" >
 		select price,price_min as time  from stock_price_detail 
 			where price_min between #{startTime} and #{endTime} 
 				and company_code=#{code2} 
+	</select>
+
+	<!-- Single Sector -->
+	<select id="getSingleSectorTimes">
+		select DISTINCT price_min as time from fsd2020.stock_price_detail spd
+			where spd.price_min between between #{startTime} and #{endTime}
+	</select>
+	<select id="getSingleSectorPrice1" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity">
+		select
+			CAST(AVG(price) AS DECIMAL(10,2)) as price
+		from
+			fsd2020.stock_price_detail spd
+		where
+			spd.stock_exchange = 'BSE' and spd.price_min = '2020-01-01 00:09:00.0';
 	</select>
 </mapper>

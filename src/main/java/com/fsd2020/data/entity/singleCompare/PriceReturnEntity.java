@@ -1,4 +1,4 @@
-package com.fsd2020.data.entity.singlecompany;
+package com.fsd2020.data.entity.singleCompare;
 
 import java.sql.Timestamp;
 

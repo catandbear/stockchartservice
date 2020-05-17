@@ -1,4 +1,4 @@
-package com.fsd2020.data.entity.singlecompany;
+package com.fsd2020.data.entity.singleCompare;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CampareOutputEntity {
+public class CompareOutputEntity {
 
 	private String name;
 	private List<PriceReturnEntity> price1;

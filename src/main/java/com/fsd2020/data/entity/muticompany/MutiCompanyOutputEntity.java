@@ -2,7 +2,7 @@ package com.fsd2020.data.entity.muticompany;
 
 import java.util.List;
 
-import com.fsd2020.data.entity.singlecompany.PriceReturnEntity;
+import com.fsd2020.data.entity.singleCompare.PriceReturnEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
