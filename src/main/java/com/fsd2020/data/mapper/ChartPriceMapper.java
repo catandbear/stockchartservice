@@ -3,7 +3,6 @@ package com.fsd2020.data.mapper;
 import java.sql.Timestamp;
 import java.util.List;
 
-import com.fsd2020.data.entity.singlesector.TimeInterval;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -27,7 +26,5 @@ public interface ChartPriceMapper {
 
 	// Single Sector Compare
 	// get times
-	List<Timestamp> getSingleSectorTimes(TimeInterval timeInterval);
-	List<PriceReturnEntity> getSingleSectorPrice1(CompareInputEntity single);
-	List<PriceReturnEntity> getSingleSectorPrice2(CompareInputEntity single);
+	List<PriceReturnEntity> getSingleSectorPrice(String name, String start, String end);
 }
