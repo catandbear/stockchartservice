@@ -6,7 +6,6 @@ import com.fsd2020.data.entity.singleCompare.PriceReturnEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
