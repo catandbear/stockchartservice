@@ -23,7 +23,8 @@ import com.fsd2020.data.mapper.ChartPriceMapper;
 public class CompanyController {
 
 	private ChartPriceMapper mapper;
-
+	public static final String TIME_FULL_SPRIT = "yyyy-MM-dd HH:mm:ss";
+	 
 	@Autowired
 	private CompanyController(ChartPriceMapper mapper) {
 		this.mapper = mapper;
@@ -32,6 +33,7 @@ public class CompanyController {
 	@PostMapping("single")
 	public OutputEntity getSingleCompanyPrices(@RequestBody(required = true) InputEntity singleCompare) {
 
+		System.out.println(singleCompare.toString());
 		singleCompare.setCode(mapper.getCompanyCode(singleCompare.getName()));
 		return new OutputEntity(singleCompare.getName(), mapper.getPrice1(singleCompare),
 				mapper.getPrice2(singleCompare));
