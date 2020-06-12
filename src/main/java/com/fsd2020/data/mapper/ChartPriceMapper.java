@@ -16,6 +16,7 @@ public interface ChartPriceMapper {
 	String getCompanyCode(String companyName);
 	
 	// Single Company Compare
+	
 	List<PriceReturnEntity> getSingleCompanyPrice(String code, String start, String end);
 	List<PriceReturnEntity> getPrice1(InputEntity single);
 	List<PriceReturnEntity> getPrice2(InputEntity single);
