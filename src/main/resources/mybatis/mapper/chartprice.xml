@@ -43,7 +43,7 @@
 	<select id="getSingleSectorPrice" resultType="com.fsd2020.data.entity.singleCompare.PriceReturnEntity">
 		select
 			price_min as time,
-			CAST(AVG(price) AS DECIMAL(10,2)) as price
+			AVG(price) as price
 		from
 			fsd2020.stock_price_detail spd
 			where spd.company_code IN (select company_code FROM fsd2020.company c where c.sector_name = #{name})

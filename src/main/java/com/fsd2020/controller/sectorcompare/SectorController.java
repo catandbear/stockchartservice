@@ -29,7 +29,10 @@ public class SectorController {
 
 	@PostMapping("single")
 	public OutputEntity conpareSingleSector(@RequestBody(required = true) InputEntity sector) {
-
+		System.out.println("single compare");
+		
+		System.out.println(mapper.getSingleSectorPrice(sector.getName(), sector.getStartTime1(), sector.getEndTime1()).get(0).toString());
+		
 		List<PriceReturnEntity> price1 = mapper.getSingleSectorPrice(sector.getName(), sector.getStartTime1(), sector.getEndTime1());
 		List<PriceReturnEntity> price2 = mapper.getSingleSectorPrice(sector.getName(), sector.getStartTime2(), sector.getEndTime2());
 		return new OutputEntity(sector.getName(), price1, price2);
